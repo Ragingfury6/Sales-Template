@@ -71,6 +71,106 @@ select {
     scroll-behavior: auto !important;
   }
 }
-.item {
-  font-size: 2rem;
+body {
+  position: relative;
+}
+
+.menu {
+  padding: 1rem;
+  width: 25%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.menu__header {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.menu__item {
+  width: 75%;
+  margin-inline: auto;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  border-radius: 0.25rem;
+  transition: 250ms ease all;
+}
+.menu__item__google {
+  background: #de5246;
+  color: #fff;
+}
+.menu__item__google:hover {
+  background: #fff;
+  color: #de5246;
+}
+.menu__item__twitter {
+  background: #1da1f2;
+}
+.menu__item__twitter:hover {
+  background: #fff;
+  color: #1da1f2;
+}
+.menu__item__facebook {
+  background: #3b5998;
+}
+.menu__item__facebook:hover {
+  background: #fff;
+  color: #3b5998;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("../endless-constellation.png");
+  background-size: contain;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  background-position: 0%;
+  animation: move 15s linear forwards infinite;
+}
+
+@media (prefers-reduced-motion) {
+  .overlay {
+    animation: none;
+  }
+}
+@keyframes move {
+  to {
+    background-position: 102%;
+  }
+}
+.homepage__header {
+  position: relative;
+  min-height: 75vh;
+}
+.homepage__header__overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/sales-background.jpg");
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 25%;
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+}
+.homepage__header__content {
+  position: absolute;
+  inset: 0;
+}
+
+.flow > * + * {
+  margin-top: 2rem;
 }/*# sourceMappingURL=index.css.map */

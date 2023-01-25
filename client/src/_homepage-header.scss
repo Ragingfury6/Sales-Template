@@ -1,0 +1,19 @@
+.homepage__header {
+  position: relative;
+  min-height: 75vh;
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/sales-background.jpg');
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: darken;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 25%;
+    clip-path: polygon(0 0, 0% 100%, 100% 0);
+  }
+  &__content {
+    position: absolute;
+    inset: 0;
+  }
+}

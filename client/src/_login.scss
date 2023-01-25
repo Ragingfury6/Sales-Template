@@ -1,0 +1,74 @@
+.menu {
+  padding: 1rem;
+  width: 25%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  &__header {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 2rem;
+  }
+  &__item {
+    width: 75%;
+    margin-inline: auto;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    border-radius: 0.25rem;
+    transition: 250ms ease all;
+    &__google {
+      background: #de5246;
+      color: #fff;
+      &:hover {
+        background: #fff;
+        color: #de5246;
+      }
+    }
+    &__twitter {
+      background: #1da1f2;
+      &:hover {
+        background: #fff;
+        color: #1da1f2;
+      }
+    }
+    &__facebook {
+      background: #3b5998;
+      &:hover {
+        background: #fff;
+        color: #3b5998;
+      }
+    }
+  }
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url('../endless-constellation.png');
+  background-size: contain;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  background-position: 0%;
+  animation: move 15s linear forwards infinite;
+}
+@media (prefers-reduced-motion) {
+  .overlay {
+    animation: none;
+  }
+}
+@keyframes move {
+  to {
+    background-position: 102%;
+  }
+}
