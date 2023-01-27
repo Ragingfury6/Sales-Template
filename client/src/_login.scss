@@ -1,7 +1,7 @@
 .menu {
-  padding: 1rem;
-  width: 25%;
-  height: 50%;
+  padding: 2rem;
+  width: 90%;
+  margin-inline: auto;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -24,6 +24,7 @@
     text-decoration: none;
     display: flex;
     gap: 2rem;
+    justify-content: center;
     align-items: center;
     border-radius: 0.25rem;
     transition: 250ms ease all;
@@ -70,5 +71,10 @@
 @keyframes move {
   to {
     background-position: 102%;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .menu {
+    width: 25%;
   }
 }

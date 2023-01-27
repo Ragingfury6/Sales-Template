@@ -1,0 +1,62 @@
+.about {
+  &__body {
+    background: linear-gradient(to bottom right, #5b325b, #846684);
+  }
+  &__desc {
+    color: #eee;
+    text-align: center;
+    padding-top: 12vh;
+    padding-bottom: 4rem;
+    font-size: 2rem;
+    max-width: 75ch;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-inline: auto;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    justify-items: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  &__card {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    width: 50%;
+    &__data {
+      background: #222;
+      color: #eee;
+      font-family: 'Source Sans Pro', sans-serif;
+      padding: 1rem;
+      border-bottom-left-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+      border-top-left-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+    }
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      gap: 1rem;
+      &__name {
+        font-size: 1.5rem;
+      }
+    }
+    &__desc {
+      text-align: center;
+      max-width: 85%;
+      margin-inline: auto;
+    }
+  }
+}
+@media screen and (min-width: 50rem) {
+  .about__card {
+    width: 100%;
+  }
+}

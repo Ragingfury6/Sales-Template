@@ -4,11 +4,20 @@
 // General
 @use '_general.scss';
 
+// Navbar
+@use '_navbar.scss';
+
 // Login
 @use '_login.scss';
 
 // Homepage Header
 @use '_homepage-header.scss';
+
+// About
+@use '_about.scss';
+
+// Contact
+@use '_contact.scss';
 
 // Utility
 @use '_utility.scss';

@@ -8,6 +8,7 @@ const path = require('path');
 require('./database/passportConfig')(passport);
 require('dotenv').config();
 
+// express initialization
 const app = express();
 app.use(session({ secret: 'superSecret' }));
 app.use(passport.initialize());
@@ -19,20 +20,28 @@ app.set('views', path.join(__dirname, '..', 'public/views'));
 app.set('view engine', 'ejs');
 db.connect();
 
+// Checks if user is logged in
 function isLoggedIn(req, res, next) {
   req.user ? next() : res.redirect('/');
 }
 
 app.use('/auth/google', googleAuthRouter);
-
+// Front end routes
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', { user: req.user?.google });
+});
+app.get('/about', isLoggedIn, (req, res) => {
+  res.render('about', { user: req.user?.google });
 });
 //  passport.authenticate('jwt', { session: false }),
 
 app.get('/profile', isLoggedIn, (req, res) => {
   console.log(req.user);
-  res.render('homepage');
+  res.render('homepage', { user: req.user?.google });
+});
+app.get('/contact', isLoggedIn, (req, res) => {
+  console.log(req.user);
+  res.render('contact', { user: req.user?.google });
 });
 
 app.get('/logout', (req, res, next) => {

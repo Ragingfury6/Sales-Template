@@ -1,0 +1,17 @@
+<nav class="main-nav">
+  <ul>
+    <li><a href="/profile">Home</a></li>
+    <li><a href="/about">About us</a></li>
+    <li><a href="/contact">Contact Us</a></li>
+    <li><a href="/">Login</a></li>
+  </ul>
+  <div class="nav__name">
+    <% if(user?.name){%>
+    <p><%= user?.name %></p>
+    <p>·</p>
+    <a href="/logout">Logout</a>
+    <% } else { %>
+    <p>Guest</p>
+    <% } %>
+  </div>
+</nav>

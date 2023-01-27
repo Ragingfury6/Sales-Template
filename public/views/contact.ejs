@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/98a50fb53a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+    <title>Document</title>
+  </head>
+  <body class="contact__body">
+    <%- include('../partials/navbar') %>
+    <h1 class="contact__header">Have Some Questions?</h1>
+    <div class="contact__data">
+      <div class="contact__data__item">
+        <i class="fa-solid fa-location-dot"></i>
+        <p>Phoenix, AZ</p>
+      </div>
+      <div class="contact__data__item">
+        <i class="fa-solid fa-phone"></i>
+        <p>602-283-1121</p>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="contact__form__wrapper">
+      <div class="contact__form__wrapper__img">
+        <i class="fa-solid fa-envelope-open-text"></i>
+      </div>
+      <form class="contact__form">
+        <input type="text" placeholder="First Name" />
+        <input type="text" placeholder="Last Name" />
+        <input type="email" placeholder="Email" />
+        <textarea placeholder="Questions?"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+// Basic schema for MongoDB
 const UserSchema = new mongoose.Schema({
   google: {
     id: {

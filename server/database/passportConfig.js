@@ -1,11 +1,10 @@
 const GoogleStrategy = require('passport-google-oauth2').Strategy;
-const JwtStrategy = require('passport-jwt').Strategy;
 require('dotenv').config();
-const { ExtractJwt } = require('passport-jwt');
 const User = require('./models/userModel');
 
 module.exports = (passport) => {
   passport.use(
+    // Uses google to log in
     new GoogleStrategy(
       {
         clientID: process.env.CLIENT_ID,
@@ -15,6 +14,8 @@ module.exports = (passport) => {
       },
       async (req, accessToken, refreshToken, profile, done) => {
         try {
+          // If theres an existing user, let them in
+          // If not, make a new user
           let existingUser = await User.findOne({ 'google.id': profile.id });
           if (existingUser) {
             return done(null, existingUser);
@@ -36,22 +37,7 @@ module.exports = (passport) => {
       }
     )
   );
-  passport.use(
-    new JwtStrategy(
-      {
-        jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-        secretOrKey: 'secretKey',
-      },
-      async (payload, done) => {
-        try {
-          const user = payload.user;
-          done(null, user);
-        } catch (err) {
-          done(err, false);
-        }
-      }
-    )
-  );
+  // Serialization and deserialization of users
   passport.serializeUser((user, done) => {
     done(null, user);
   });

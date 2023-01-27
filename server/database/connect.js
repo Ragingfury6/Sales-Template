@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
+// Mongoose connection function
 const connect = async () => {
   mongoose.connect(process.env.MONGO_URI, { useUnifiedTopology: true });
   const db = mongoose.connection;
